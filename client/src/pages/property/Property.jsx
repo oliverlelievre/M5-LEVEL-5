@@ -1,4 +1,6 @@
 import "../../styles/_property.scss";
+import bed from "../../images/Bed.png";
+import bath from "../../images/bathroom.png";
 import { formatDistanceToNow } from "date-fns";
 import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -90,6 +92,11 @@ const Property = () => {
         <p>Loading...</p>
       ) : (
         <div className="propertyContainer">
+          <ContactModal
+            isOpen={openModal}
+            onClose={() => setOpenModal(false)}
+            id={id}
+          />
           {open && (
             <div className="slider">
               <FontAwesomeIcon
@@ -97,7 +104,6 @@ const Property = () => {
                 className="close"
                 onClick={() => setOpen(false)}
               />
-
               <FontAwesomeIcon
                 icon={faCircleArrowLeft}
                 className="arrow"
@@ -120,23 +126,41 @@ const Property = () => {
             </div>
           )}
           <div className="propertyWrapper">
-            <button className="bookNow" onClick={handleClick}>
-              Book a viewing or Enquire!
-            </button>
-            <h1 className="propertyTitle">{data.name}</h1>
-            <div className="propertyAddress">
-              <FontAwesomeIcon icon={faLocationDot} />
-              <span>{data.address}</span>
+
+            <div className="propertyDetails">
+              <h1 className="propertyTitle">{data.name}</h1>
+                <p1 className="propertyAddress">{data.address}</p1>
+              <span className="propertyPrice">
+                ${data.roomPrice} /per week
+              </span>
+              <span className="siCancelOp">
+          <img className="siEssentials" src={bed} alt="" />
+          {" "}{data.bedrooms}{" "}bedrooms{" "}
+          <img className="siEssentials" src={bath} alt="" />{" "}{data.bathrooms}{" "}bathrooms
+        </span>
+
+              <p className="propertyDesc">{data.description}</p>
+              <h1 className="propertyList">
+                Listed{" "}
+                {data.createdAt &&
+                  formatDistanceToNow(new Date(data.createdAt), {
+                    addSuffix: true,
+                  })}
+              </h1>
+
+                  <div className="propertyButtons">
+              <button className="button1" onClick={() => setOpenModal(true)}>
+                Request a viewing
+              </button>
+
+              <button className="button2" onClick={() => setOpenModal(true)}>
+                Apply
+              </button>
+              </div>
             </div>
-            <span className="propertyDistance">
-              Excellent location – {data.distance}m from center
-            </span>
-            <span className="propertyPriceHighlight">
-              Book a stay over ${data.roomPrice} at this property and get a free
-              airport taxi
-            </span>
+
             <div className="propertyImages">
-              {data.photos?.map((photo, i) => (
+              {photos?.map((photo, i) => (
                 <div className="propertyImgWrapper" key={i}>
                   <img
                     onClick={() => handleOpen(i)}
@@ -147,37 +171,7 @@ const Property = () => {
                 </div>
               ))}
             </div>
-            <div className="propertyDetails">
-              <div className="propertyDetailsTexts">
-                <h1 className="propertyTitle">{data.title}</h1>
-                <p className="propertyDesc">{data.description}</p>
-              </div>
-              <div className="propertyDetailsPrice">
-                <h1>
-                  Listed{" "}
-                  {data.createdAt &&
-                    formatDistanceToNow(new Date(data.createdAt), {
-                      addSuffix: true,
-                    })}
-                </h1>
-                <span>
-                  Located in the real heart of Krakow, this property has an
-                  excellent location score of 9.8!
-                </span>
-                <h2>
-                  <b>${data.roomPrice}</b>
-                </h2>
-                <button onClick={() => setOpenModal(true)}>
-                  Book a viewing or Enquire
-                </button>
-                <ContactModal
-                  isOpen={openModal}
-                  onClose={() => setOpenModal(false)}
-                  id={id}
-                />
-              </div>
             </div>
-          </div>
           <Footer />
         </div>
       )}

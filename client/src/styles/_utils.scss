@@ -4,7 +4,7 @@
     @return (math.div($value, 16))+rem;
 }
 
-@mixin background($imgpath,$backgroundposition:center,$repeat:no-repeat, $width:3000px) {
+@mixin background($imgpath,$backgroundposition:center,$repeat:no-repeat, $width:100vw) {
     background: {
         image: url($imgpath);
         repeat: $repeat;

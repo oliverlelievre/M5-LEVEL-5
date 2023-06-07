@@ -5,35 +5,23 @@
   position: relative;
   height: 300px;
   width: 1920px;
+  display: flex;
+  justify-content: center;
 }
 
 .hero--heading{
-  padding-top: 50px;
-  padding-left: 150px;
-  width: 350px;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
 }
 
 .hero--subTitle{
-  padding-top: 100px;
-  padding-left: 150px;
-}
-
-.hero--searchBtn{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 300px;
-  width: 400px;
-  background-color: white;
-  margin-left: 150px;
-  border-radius:15px ;
-  box-shadow: 1px 5px rgba(0, 0, 0, 0.301);
+  justify-content: center;
 }
 
 .hero--searchBar{
-  margin-left: 150px;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
 }
-
 

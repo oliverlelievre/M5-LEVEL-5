@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../../styles/_contactModal.scss"
 
 const ContactModal = ({ isOpen, onClose, id }) => {
   const [title, setTitle] = useState("");
@@ -28,9 +29,6 @@ const ContactModal = ({ isOpen, onClose, id }) => {
       setMessage("");
       setPhone(""); // Reset the phone field
 
-      // Close the modal
-      onClose();
-
       // Handle the response from the server if needed
       console.log(response.data);
     } catch (error) {
@@ -45,13 +43,15 @@ const ContactModal = ({ isOpen, onClose, id }) => {
 
   return (
     <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>
+      <div className="modal__content">
+        <span className="close" onClick={() => onClose(false)}>
           &times;
         </span>
-        <h2>Contact Form</h2>
+        <h2 className="modal__contentHeading">Contact Form</h2>
         <form onSubmit={handleSubmit}>
+        <div className="modal__contentName"> 
           <label htmlFor="name">Name:</label>
+          <br></br>
           <input
             type="text"
             id="name"
@@ -59,8 +59,11 @@ const ContactModal = ({ isOpen, onClose, id }) => {
             onChange={(e) => setTitle(e.target.value)}
             required
           />
+          </div>
 
+          <div className="modal__contentEmail"> 
           <label htmlFor="email">Email:</label>
+          <br></br>
           <input
             type="email"
             id="email"
@@ -68,8 +71,10 @@ const ContactModal = ({ isOpen, onClose, id }) => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-
+          </div>
+          <div className="modal__contentPhone"> 
           <label htmlFor="phone">Phone:</label>
+          <br></br>
           <input
             type="text"
             id="phone"
@@ -77,15 +82,18 @@ const ContactModal = ({ isOpen, onClose, id }) => {
             onChange={(e) => setPhone(e.target.value)}
             required
           />
+          </div>
 
+          <div className="modal__contentMessage"> 
           <label htmlFor="message">Message:</label>
+          <br></br>
           <textarea
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
           ></textarea>
-
+          </div>
           <button type="submit">Submit</button>
         </form>
       </div>

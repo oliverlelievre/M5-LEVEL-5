@@ -1,3 +1,5 @@
+@use "color" as c;
+
 .propertyContainer {
   display: flex;
   flex-direction: column;
@@ -6,29 +8,23 @@
 }
 
 .propertyWrapper {
-  width: 100%;
-  max-width: 1024px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 100px;
   position: relative;
+  width: 1500px;
+  margin-bottom: 50px;
 }
 
-.bookNow {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
+.propertyDetails{
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin-left: 1rem;
 }
 
 .propertyTitle {
   font-size: 24px;
+  margin-bottom: -50px;
 }
 
 .propertyAddress {
@@ -38,28 +34,57 @@
   gap: 10px;
 }
 
-.propertyDistance {
-  color: #0071c2;
+.propertyPrice {
+  color: black;
   font-weight: 500;
 }
 
-.propertyPriceHighlight {
-  color: #008009;
-  font-weight: 500;
+.button1{
+  margin-right: 50px;
+  width: 180px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid c.$secondary-color;
+  border-radius: 10px;
+  transition: 0.2s background-color;
+  &:hover{
+    background-color: c.$button-hover-color;
+    color: white;
+    cursor: pointer;
+    border: 1px solid c.$primary-color;
+  }
+}
+
+
+.button2{
+  width: 180px;
+  height: 45px;
+  background-color: white;
+  border: 1px solid c.$secondary-color;
+  border-radius: 10px;
+  transition: 0.2s background-color;
+  &:hover{
+    background-color: c.$button-hover-color;
+    color: white;
+    cursor: pointer;
+    border: 1px solid c.$primary-color;
+  }
 }
 
 .propertyImages {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 45px;
+  margin-left: 300px;
 }
 
 .propertyImgWrapper {
-  width: 33%;
+  padding: 10px;
+  width: 300px;
 }
 
 .propertyImg {
-  width: 100%;
+  width: 300px;
   object-fit: cover;
   cursor: pointer;
 }
@@ -77,36 +102,12 @@
 
 .propertyDesc {
   font-size: 14px;
+  line-height: 2.3;
   margin-top: 20px;
 }
 
-.propertyDetailsPrice {
-  flex: 1;
-  background-color: #ebf3ff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.propertyDetailsPrice > h1 {
-  font-size: 18px;
-  color: #555;
-}
-.propertyDetailsPrice > span {
-  font-size: 14px;
-}
-.propertyDetailsPrice > h2 {
-  font-weight: 300;
-}
-.propertyDetailsPrice > button {
-  border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
+.propertyList{
+  font-size: 1.5rem;
 }
 
 .slider {

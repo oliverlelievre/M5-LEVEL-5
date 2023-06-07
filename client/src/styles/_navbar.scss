@@ -1,3 +1,5 @@
+@use "media-queries" as m;
+
 .navbar{
   height: 50px;
   background-color: white;
@@ -19,7 +21,7 @@
 }
 
 .navItems{
-  margin-right: 450px;
+  margin-right: 200px;
 }
 
 .navButton{
