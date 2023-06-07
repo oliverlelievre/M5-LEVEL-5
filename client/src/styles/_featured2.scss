@@ -1,8 +1,12 @@
 .featured {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  max-width: 1024px;
+  margin-left: 370px;
   gap: 20px;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 20px;
 }
 
 .featured__item {

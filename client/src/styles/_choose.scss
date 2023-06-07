@@ -1,10 +1,16 @@
-.featured--heading{
+.choose{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.choose--heading{
   margin-bottom: 50px;
   margin-left: 150px;
   margin-right: 100px;
 }
 
-.featured--headingContent{
+.choose--headingContent{
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
@@ -15,7 +21,7 @@
   font-size: 36px;
 }
 
-.featured--cards{
+.choose--cards{
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -24,7 +30,7 @@
   margin-top: 80px;
 }
 
-.featured--cards1{
+.choose--cards1{
   border: 1px solid black;
   padding: 5px 50px;
   padding-bottom: 45px;
@@ -38,7 +44,7 @@
   box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
 }
 
-.featured--cards2{
+.choose--cards2{
   border: 1px solid black;
   padding: 5px 50px;
   padding-bottom: 45px;
@@ -52,7 +58,7 @@
   box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
 }
 
-.featured--cards3{
+.choose--cards3{
   border: 1px solid black;
   padding: 5px 50px;
   padding-bottom: 45px;
@@ -66,6 +72,6 @@
   box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
 }
 
-.featured--cards1Heading{
+.choose--cards1Heading{
   margin-bottom: 20px;
 }

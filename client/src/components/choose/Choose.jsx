@@ -1,14 +1,14 @@
 import house1 from "../../images/House1.png";
 import house2 from "../../images/House2.png";
 import key from "../../images/Key.png";
-import "../../styles/_featured.scss";
+import "../../styles/_choose.scss";
 
 const Choose = () => {
   return (
-    <div className="featured">
-      <div className="featured--heading">
+    <div className="choose">
+      <div className="choose--heading">
         <h4>WHY CHOOSE METRO NZ</h4>
-        <div className="featured--headingContent">
+        <div className="choose--headingContent">
           <h3 className="subTitle">
             Provides the most complete list of property
           </h3>
@@ -21,10 +21,10 @@ const Choose = () => {
         </div>
       </div>
 
-      <div className="featured--cards">
-        <div className="featured--cards1">
+      <div className="choose--cards">
+        <div className="choose--cards1">
           <img src={house1} alt="house1"></img>
-          <h4 className="featured--cards1Heading">Affordable Prices</h4>
+          <h4 className="choose--cards1Heading">Affordable Prices</h4>
           <br></br>
           <p1 className="card--content1">
             We offer affordable prices without compromising on quality, making
@@ -32,7 +32,7 @@ const Choose = () => {
           </p1>
         </div>
 
-        <div className="featured--cards2">
+        <div className="choose--cards2">
           <img src={house2} alt="house1"></img>
           <h4>High Quality Property</h4>
           <br></br>
@@ -42,9 +42,9 @@ const Choose = () => {
           </p1>
         </div>
 
-        <div className="featured--cards3">
+        <div className="choose--cards3">
           <img src={key} alt="key"></img>
-          <h4 className="featured--cards1Heading">Tailored Service</h4>
+          <h4 className="choose--cards1Heading">Tailored Service</h4>
           <br></br>
           <p1>
             We offer specialized services for selling tenanted properties,

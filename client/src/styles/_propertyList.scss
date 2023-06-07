@@ -1,9 +1,10 @@
 .pList {
   width: 100%;
   max-width: 1024px;
-  display: flex;
-  justify-content: space-between;
   gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-left: 370px;
 
   &__item {
     flex: 1;
