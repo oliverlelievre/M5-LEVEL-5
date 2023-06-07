@@ -7,14 +7,16 @@
     border: none;
     border-radius: 5px;
     padding: 10px;
+    margin-right: 5px;
     cursor: pointer;
     transition: 0.5s background-color;
+
+    &:hover{
+      background-color: c.$button-hover-color;
+  }
 }
 
-.headerBtn:hover{
-    background-color: c.$button-hover-color;
-}
-  
+
 .headerSearch {
     height: 30px;
     background-color: white;
@@ -30,6 +32,7 @@
   
   .headerIcon {
     color: lightgray;
+    padding-left: 5px;
   }
   
   .headerSearchItem {
