@@ -17,7 +17,7 @@ const Header = () => {
         <br></br>
         <br></br>
         <br></br>
-        <p1 className="hero--subTitle">Helping clients to achieve harmony through our expertise and skills</p1>
+        <p className="hero--subTitle">Helping clients to achieve harmony through our expertise and skills</p>
         <br></br>
         <div className="hero--searchBar">
           <SearchBar />

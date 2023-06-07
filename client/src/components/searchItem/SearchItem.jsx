@@ -3,7 +3,7 @@ import "../../styles/_searchItem.scss";
 import bed from "../../images/Bed.png";
 import bath from "../../images/bathroom.png";
 
-const SearchItem = ({ item }) => {
+const SearchItem= ({ item }) => {
   if (!item) {
     return null;
   }

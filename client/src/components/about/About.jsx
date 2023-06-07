@@ -1,5 +1,5 @@
-import useFetch from "../../hooks/useFetch";
 import "../../styles/_about.scss";
+
 
 const video = "https://metronz.co.nz/wp-content/uploads/2020/06/MRENZ_41BEACH_FINAL.mov"
 

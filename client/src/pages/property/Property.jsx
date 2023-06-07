@@ -15,7 +15,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import useFetch from "../../hooks/useFetch";
 import Navbar from "../../components/navbar/Navbar";
-import MailList from "../../components/mailList/MailList";
 import ContactModal from "../../components/ContactModal/ContactModal";
 import Footer from "../../components/footer/Footer";
 // import Reserve from "../../components/reserve/Reserve";
@@ -126,19 +125,17 @@ const Property = () => {
             </div>
           )}
           <div className="propertyWrapper">
-
             <div className="propertyDetails">
               <h1 className="propertyTitle">{data.name}</h1>
-                <p1 className="propertyAddress">{data.address}</p1>
+              <p className="propertyAddress">{data.address}</p>
               <span className="propertyPrice">
                 ${data.roomPrice} /per week
               </span>
               <span className="siCancelOp">
-          <img className="siEssentials" src={bed} alt="" />
-          {" "}{data.bedrooms}{" "}bedrooms{" "}
-          <img className="siEssentials" src={bath} alt="" />{" "}{data.bathrooms}{" "}bathrooms
-        </span>
-
+                <img className="siEssentials" src={bed} alt="" />
+                {" "}{data.bedrooms}{" "}bedrooms{" "}
+                <img className="siEssentials" src={bath} alt="" />{" "}{data.bathrooms}{" "}bathrooms
+              </span>
               <p className="propertyDesc">{data.description}</p>
               <h1 className="propertyList">
                 Listed{" "}
@@ -147,18 +144,15 @@ const Property = () => {
                     addSuffix: true,
                   })}
               </h1>
-
-                  <div className="propertyButtons">
-              <button className="button1" onClick={() => setOpenModal(true)}>
-                Request a viewing
-              </button>
-
-              <button className="button2" onClick={() => setOpenModal(true)}>
-                Apply
-              </button>
+              <div className="propertyButtons">
+                <button className="button1" onClick={() => setOpenModal(true)}>
+                  Request a viewing
+                </button>
+                <button className="button2" onClick={() => setOpenModal(true)}>
+                  Apply
+                </button>
               </div>
             </div>
-
             <div className="propertyImages">
               {photos?.map((photo, i) => (
                 <div className="propertyImgWrapper" key={i}>
@@ -171,7 +165,7 @@ const Property = () => {
                 </div>
               ))}
             </div>
-            </div>
+          </div>
           <Footer />
         </div>
       )}

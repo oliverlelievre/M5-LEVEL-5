@@ -33,3 +33,4 @@ const FeaturedProperties = () => {
 };
 
 export default FeaturedProperties;
+
