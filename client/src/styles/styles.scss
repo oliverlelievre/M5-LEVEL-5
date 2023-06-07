@@ -1,0 +1,14 @@
+@use "color" as c;
+@use "navbar";
+@use "hero";
+@use "featured";
+@use "about";
+@use "blog";
+@use "response";
+@use "homeContact";
+@use "footer";
+@use "home";
+
+.main {
+  font-family: Arial, Helvetica, sans-serif;
+}

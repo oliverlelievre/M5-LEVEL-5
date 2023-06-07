@@ -1,0 +1,37 @@
+@use "utils" as u;
+
+.header{
+  @include u.background("../images/background.png");
+  position: relative;
+  height: 800px;
+}
+
+h1{
+  padding-top: 100px;
+  padding-left: 150px;
+  width: 350px;
+}
+
+.hero--subTitle{
+  padding-top: 1000px;
+  padding-left: 150px;
+}
+
+.hero--searchBtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 300px;
+  width: 400px;
+  background-color: white;
+  margin-left: 150px;
+  border-radius:15px ;
+  box-shadow: 1px 5px rgba(0, 0, 0, 0.301);
+}
+
+.hero--searchBar{
+  margin-left: 150px;
+  margin-top: 250px;
+}
+
+
