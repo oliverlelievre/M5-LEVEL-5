@@ -1,8 +1,13 @@
 .homeContainer{
-  margin-top: 50px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.homeContainer--links{
+  margin-bottom: 50px;
+
 }
 
 .homeTitle{

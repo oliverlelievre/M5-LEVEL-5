@@ -1,4 +1,5 @@
-import "./property.css";
+import "../../styles/_property.scss";
+import { formatDistanceToNow } from "date-fns";
 import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -40,7 +41,7 @@ const Property = () => {
   // };
 
   // const days = dates && dates[0] ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
-    const photos = [
+  const photos = [
     {
       src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
     },
@@ -96,18 +97,21 @@ const Property = () => {
                 className="close"
                 onClick={() => setOpen(false)}
               />
+
               <FontAwesomeIcon
                 icon={faCircleArrowLeft}
                 className="arrow"
                 onClick={() => handleMove("l")}
               />
+
               <div className="sliderWrapper">
                 <img
-                  src={data.photos[slideNumber]}
+                  src={photos[slideNumber].src}
                   alt=""
                   className="sliderImg"
                 />
               </div>
+
               <FontAwesomeIcon
                 icon={faCircleArrowRight}
                 className="arrow"
@@ -128,15 +132,15 @@ const Property = () => {
               Excellent location – {data.distance}m from center
             </span>
             <span className="propertyPriceHighlight">
-              Book a stay over ${data.roomPrice} at this property and get a
-              free airport taxi
+              Book a stay over ${data.roomPrice} at this property and get a free
+              airport taxi
             </span>
             <div className="propertyImages">
               {data.photos?.map((photo, i) => (
                 <div className="propertyImgWrapper" key={i}>
                   <img
                     onClick={() => handleOpen(i)}
-                    src={photo}
+                    src={photo.src}
                     alt=""
                     className="propertyImg"
                   />
@@ -149,7 +153,13 @@ const Property = () => {
                 <p className="propertyDesc">{data.description}</p>
               </div>
               <div className="propertyDetailsPrice">
-                <h1>Listed {data.createdAt} </h1>
+                <h1>
+                  Listed{" "}
+                  {data.createdAt &&
+                    formatDistanceToNow(new Date(data.createdAt), {
+                      addSuffix: true,
+                    })}
+                </h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!
@@ -157,10 +167,14 @@ const Property = () => {
                 <h2>
                   <b>${data.roomPrice}</b>
                 </h2>
-                  <button onClick={() => setOpenModal(true)}>Book a viewing or Enquire</button>
-<ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} id={id} />
-
-
+                <button onClick={() => setOpenModal(true)}>
+                  Book a viewing or Enquire
+                </button>
+                <ContactModal
+                  isOpen={openModal}
+                  onClose={() => setOpenModal(false)}
+                  id={id}
+                />
               </div>
             </div>
           </div>

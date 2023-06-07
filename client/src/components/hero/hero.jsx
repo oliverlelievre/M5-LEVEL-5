@@ -8,7 +8,12 @@ const Header = () => {
   return (
     <div className="header">
       <div className="hero">
-        <h1>Discover a place you will love to live</h1>
+        <h1 className="hero--heading">Discover a place you will love to live</h1>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <br></br>
         <br></br>
         <br></br>

@@ -1,45 +1,54 @@
-import house1 from "../../images/House1.png";
-import house2 from "../../images/House2.png";
-import key from "../../images/Key.png";
-import "../../styles/_featured.scss";
+import useFetch from "../../hooks/useFetch";
+import "../../styles/_featured2.scss";
 
 const Featured = () => {
+  const { data, loading, error } = useFetch(
+    "http://localhost:8800/api/properties/countByCity?cities=Auckland,Wellington,Christchurch"
+  );
 
+  console.log(data);
   return (
     <div className="featured">
-      <div className="featured--heading">
-        <h4>WHY CHOOSE METRO NZ</h4>
-        <div className="featured--headingContent">
-        <h3 className="subTitle">Provides the most complete list of property</h3>
-        <p1>Metro NZ is one of the top Auckland Property Management companies. All of our staff are property investors who have expert knowledge of the property market and your best interest in mind at all times.</p1>
-        <br></br>
-        </div>
-      </div>
+      {loading ? (
+        "Loading please wait"
+      ) : (
+        <>
+          <div className="featured__item">
+            <img
+              src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
+              alt=""
+              className="featured__img"
+            />
+            <div className="featured__titles">
+              <h1 className="featured__title">Auckland</h1>
+              <h2 className="featured__subtitle">{data[0]} properties</h2>
+            </div>
+          </div>
 
-      <div className="featured--cards">
-
-         <div className="featured--cards1">
-            <img src={house1} alt="house1"></img>
-            <h4 className="featured--cards1Heading">Affordable Prices</h4>
-            <br></br>
-            <p1 className="card--content1">We offer affordable prices without compromising on quality, making luxury living accessible to a wider audience.</p1>
-         </div>
-
-        <div className="featured--cards2">
-        <img src={house2} alt="house1"></img>
-            <h4>High Quality Property</h4>
-            <br></br>
-            <p1>Exquisite properties of unrivaled quality, setting a new standard in luxury living.</p1>
-        </div>
-
-        <div className="featured--cards3">
-        <img src={key} alt="key"></img>
-            <h4 className="featured--cards1Heading">Tailored Service</h4>
-            <br></br>
-            <p1>We offer specialized services for selling tenanted properties, easing fustration for vendors, agents, and tenants.</p1>
-        </div>
-
-         </div>
+          <div className="featured__item">
+            <img
+              src="https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o="
+              alt=""
+              className="featured__img"
+            />
+            <div className="featured__titles">
+              <h1 className="featured__title">Wellington</h1>
+              <h2 className="featured__subtitle">{data[1]} properties</h2>
+            </div>
+          </div>
+          <div className="featured__item">
+            <img
+              src="https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o="
+              alt=""
+              className="featured__img"
+            />
+            <div className="featured__titles">
+              <h1 className="featured__title">London</h1>
+              <h2 className="featured__subtitle">{data[2]} Christchurch</h2>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

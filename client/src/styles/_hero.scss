@@ -3,17 +3,18 @@
 .header{
   @include u.background("../images/background.png");
   position: relative;
-  height: 800px;
+  height: 300px;
+  width: 1920px;
 }
 
-h1{
-  padding-top: 100px;
+.hero--heading{
+  padding-top: 50px;
   padding-left: 150px;
   width: 350px;
 }
 
 .hero--subTitle{
-  padding-top: 1000px;
+  padding-top: 100px;
   padding-left: 150px;
 }
 
@@ -31,7 +32,8 @@ h1{
 
 .hero--searchBar{
   margin-left: 150px;
-  margin-top: 250px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 
