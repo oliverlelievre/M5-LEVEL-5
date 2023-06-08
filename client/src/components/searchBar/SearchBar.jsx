@@ -48,10 +48,7 @@ const SearchBar = () => {
   return (
     <div className="headerSearch">
       <div className="headerSearchItem">
-      <FontAwesomeIcon 
-      icon={faLocationDot}
-          className="headerIcon"
-        />
+        <FontAwesomeIcon icon={faLocationDot} className="headerIcon" />
         <input
           type="text"
           placeholder="Where are you going?"
@@ -84,7 +81,7 @@ const SearchBar = () => {
         <span
           onClick={() => setOpenOptions(!openOptions)}
           className="headerSearchText"
-        >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+        >{`${options.children} bedroom · ${options.room} bathroom`}</span>
         {openOptions && (
           <div className="options">
             <div className="optionItem">
