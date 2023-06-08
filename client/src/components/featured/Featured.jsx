@@ -43,7 +43,7 @@ const Featured= () => {
               className="featured__img"
             />
             <div className="featured__titles">
-              <h1 className="featured__title">London</h1>
+              <h1 className="featured__title">Christchurch</h1>
               <h2 className="featured__subtitle">{data[2]} Christchurch</h2>
             </div>
           </div>

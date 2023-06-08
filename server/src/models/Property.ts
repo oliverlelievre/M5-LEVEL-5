@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-interface IProperty extends Document {
+export interface IProperty extends Document {
   name: string;
   type: string;
   city: string;
@@ -17,6 +17,7 @@ interface IProperty extends Document {
   applications?: string[];
   featured: boolean;
 }
+
 
 const PropertySchema = new Schema<IProperty>(
   {
