@@ -1,68 +1,63 @@
-.response{
-    margin-top: 100px;
-    padding-top: 50px;
-    padding-bottom: 200px;
-    background-color: #E7FDFB;
-}
-
-.response--heading{
+.response {
+  margin-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 200px;
+  background-color: #e7fdfb;
+  &__heading {
     text-align: center;
     color: rgb(128, 160, 247);
-    font-weight: lighter;
-}
+    font-weight: 450;
+    font-size: 24px;
+  }
 
-.response--cards{
+  &__cards {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     margin-left: 150px;
     margin-right: 80px;
     margin-top: 80px;
-  }
+    &Profile {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    &1 {
+      border: 1px solid black;
+      padding: 5px 50px;
+      padding-bottom: 45px;
+      padding-top: 25px;
+      width: 250px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      background-color: white;
+    }
 
-  .response--cardsProfile{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 40px;
+    &2 {
+      border: 1px solid black;
+      padding: 5px 50px;
+      padding-bottom: 45px;
+      padding-top: 25px;
+      width: 250px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      background-color: white;
+    }
+    &3 {
+      border: 1px solid black;
+      padding: 5px 50px;
+      padding-bottom: 45px;
+      padding-top: 25px;
+      width: 250px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      background-color: white;
+    }
+    &Images {
+      width: 60px;
+    }
   }
-
-  
-  .response--cards1{
-    border: 1px solid black;
-    padding: 5px 50px;
-    padding-bottom: 45px;
-    padding-top: 25px;
-    width: 250px;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-    background-color: white;
-  }
-  
-  .response--cards2{
-    border: 1px solid black;
-    padding: 5px 50px;
-    padding-bottom: 45px;
-    padding-top: 25px;
-    width: 250px;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-    background-color: white;
-  }
-  
-  .response--cards3{
-    border: 1px solid black;
-    padding: 5px 50px;
-    padding-bottom: 45px;
-    padding-top: 25px;
-    width: 250px;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-    background-color: white;
-  }
-
-  .response--cardsImages{
-    width: 60px;
-  }
+}

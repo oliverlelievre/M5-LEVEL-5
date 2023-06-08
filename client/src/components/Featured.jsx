@@ -1,5 +1,6 @@
-import useFetch from "../../hooks/useFetch";
-import "../../styles/_featured2.scss";
+import React from "react";
+import useFetch from "../hooks/useFetch";
+import "../styles/_featured2.scss";
 
 const Featured= () => {
   const { data, loading, error } = useFetch(

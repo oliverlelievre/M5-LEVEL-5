@@ -1,13 +1,13 @@
 import "../../styles/_list.scss";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/Navbar";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
-import SearchItem from "../../components/searchItem/SearchItem";
+import SearchItem from "../../components/SearchItem";
 import useFetch from "../../hooks/useFetch";
-import Footer from "../../components/footer/Footer";
-import HomeContact from "../../components/homeContact/homeContact";
+import Footer from "../../components/Footer";
+import HomeContact from "../../components/HomeContact";
 
 const List = () => {
   const location = useLocation();
@@ -19,25 +19,28 @@ const List = () => {
   const [max, setMax] = useState(undefined);
 
   const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8800/api/properties?city=${destination}&min=${min || 0}&max=${max || 9999}`
+    `http://localhost:8800/api/properties?city=${destination}&min=${
+      min || 0
+    }&max=${max || 9999}`
   );
-  
+
   const handleClick = () => {
-    reFetch()
-  }
+    reFetch();
+  };
 
   return (
     <div>
       <Navbar />
-      <div className="listContainer">
-        <div className="listWrapper">
-          <div className="listSearch">
-            <h1 className="lsTitle">Filters</h1>
-            <div className="lsItem">
+      <div className="list__Container">
+        <div className="list__ContainerWrapper">
+          <div className="list__ContainerWrapperSearch">
+            <h1 className="list__ContainerWrapperSearchTitle">Filters</h1>
+            <div className="list__ContainerWrapperSearchItem">
               <label>Destination</label>
               <input placeholder={destination} type="text" />
             </div>
-            <div className="lsItem">
+
+            <div className="list__ContainerWrapperSearchItem">
               <label>Check-in Date</label>
               <span onClick={() => setOpenDate(!openDate)}>{`${format(
                 date[0].startDate,
@@ -51,63 +54,66 @@ const List = () => {
                 />
               )}
             </div>
-            <div className="lsItem">
+            <div className="list__ContainerWrapperSearchItem">
               <label>Options</label>
-              <div className="lsOptions">
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">
+              <div className="ls__Options">
+                <div className="ls__OptionItem">
+                  <span className="ls__OptionText">
                     Min price <small>per night</small>
                   </span>
-                  <input type="number" onChange={e=>setMin(e.target.value)} className="lsOptionInput" />
+                  <input
+                    type="number"
+                    onChange={(e) => setMin(e.target.value)}
+                    className="ls__OptionInput"
+                  />
                 </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">
+                <div className="ls__OptionItem">
+                  <span className="ls__OptionText">
                     Max price <small>per night</small>
                   </span>
-                  <input type="number" onChange={e=>setMax(e.target.value)} className="lsOptionInput" />
+                  <input
+                    type="number"
+                    onChange={(e) => setMax(e.target.value)}
+                    className="ls__OptionInput"
+                  />
                 </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Bedrooms</span>
+                <div className="ls__OptionItem">
+                  <span className="ls__OptionText">Bedrooms</span>
                   <input
                     type="number"
                     min={1}
-                    className="lsOptionInput"
-                    placeholder={options.adult}
+                    className="ls__OptionInput"
+                    placeholder={options.bedrooms}
                   />
                 </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Bathrooms</span>
-                  <input
-                    type="number"
-                    min={0}
-                    className="lsOptionInput"
-                    placeholder={options.children}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Rooms</span>
+                <div className="ls__OptionItem">
+                  <span className="ls__OptionText">Bathrooms</span>
                   <input
                     type="number"
                     min={1}
-                    className="lsOptionInput"
-                    placeholder={options.room}
+                    className="ls__OptionInput"
+                    placeholder={options.bathrooms}
                   />
                 </div>
               </div>
             </div>
             <button onClick={handleClick}>Search</button>
           </div>
-          <div className="listResult">
-            {loading ? "loading" : <>
-              {data.map(item => (
-                <SearchItem item={item}  key={item._id}/>
-              ))}
-            </>}
+          <div className="list__Result">
+            {loading ? (
+              "loading"
+            ) : (
+              <>
+                {data.map((item) => (
+                  <SearchItem item={item} key={item._id} />
+                ))}
+              </>
+            )}
             <SearchItem />
           </div>
         </div>
       </div>
-      <HomeContact/>
+      <HomeContact />
       <Footer />
     </div>
   );

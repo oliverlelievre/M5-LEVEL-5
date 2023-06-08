@@ -1,113 +1,113 @@
 @use "color" as c;
 
-.propertyContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
+.property {
+  &__Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
 
-.propertyWrapper {
-  display: flex;
-  gap: 100px;
-  position: relative;
-  width: 1500px;
-  margin-bottom: 50px;
-}
+  &__Wrapper {
+    display: flex;
+    gap: 100px;
+    position: relative;
+    margin-bottom: 50px;
+    &Details {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
 
-.propertyDetails{
-  display: flex;
-  flex-direction: column;
-  width: 30rem;
-  margin-left: 1rem;
-}
+      &Title {
+        font-size: 32px;
+      }
 
-.propertyTitle {
-  font-size: 24px;
-  margin-bottom: -50px;
-}
+      &Address {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-.propertyAddress {
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+      &Price {
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+    }
+  }
 
-.propertyPrice {
-  color: black;
-  font-weight: 500;
-}
+  &__Essentials {
+    margin-bottom: 50px;
+    &Images {
+      height: 25px;
+    }
+  }
 
-.button1{
-  margin-right: 50px;
-  width: 180px;
-  height: 45px;
-  background-color: white;
-  border: 1px solid c.$secondary-color;
-  border-radius: 10px;
-  transition: 0.2s background-color;
-  &:hover{
-    background-color: c.$button-hover-color;
-    color: white;
-    cursor: pointer;
-    border: 1px solid c.$primary-color;
+  &__Desc {
+    font-size: 14px;
+    line-height: 2.3;
+    margin-top: 20px;
+  }
+
+  &__List {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__Buttons {
+    &1 {
+      margin-right: 50px;
+      width: 180px;
+      height: 45px;
+      background-color: white;
+      border: 1px solid c.$secondary-color;
+      border-radius: 10px;
+      transition: 0.2s background-color;
+      &:hover {
+        background-color: c.$button-hover-color;
+        color: white;
+        cursor: pointer;
+        border: 1px solid c.$primary-color;
+      }
+    }
+
+    &2 {
+      width: 180px;
+      height: 45px;
+      background-color: white;
+      border: 1px solid c.$secondary-color;
+      border-radius: 10px;
+      transition: 0.2s background-color;
+      &:hover {
+        background-color: c.$button-hover-color;
+        color: white;
+        cursor: pointer;
+        border: 1px solid c.$primary-color;
+      }
+    }
+  }
+
+  &__Images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 45px;
+    margin-left: 300px;
+  }
+
+  &__ImgWrapper {
+    padding: 10px;
+    width: 300px;
   }
 }
 
-
-.button2{
-  width: 180px;
-  height: 45px;
-  background-color: white;
-  border: 1px solid c.$secondary-color;
-  border-radius: 10px;
-  transition: 0.2s background-color;
-  &:hover{
-    background-color: c.$button-hover-color;
-    color: white;
-    cursor: pointer;
-    border: 1px solid c.$primary-color;
-  }
-}
-
-.propertyImages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-radius: 45px;
-  margin-left: 300px;
-}
-
-.propertyImgWrapper {
-  padding: 10px;
-  width: 300px;
-}
-
-.propertyImg {
+.Img {
   width: 300px;
   object-fit: cover;
   cursor: pointer;
-}
-
-.propertyDetails {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.propertyDetailsTexts {
-  flex: 3;
-}
-
-.propertyDesc {
-  font-size: 14px;
-  line-height: 2.3;
-  margin-top: 20px;
-}
-
-.propertyList{
-  font-size: 1.5rem;
 }
 
 .slider {
@@ -120,19 +120,18 @@
   z-index: 999;
   display: flex;
   align-items: center;
-}
+  &__Wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.sliderWrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sliderImg {
-  width: 80%;
-  height: 80vh;
+  &__Img {
+    width: 80%;
+    height: 80vh;
+  }
 }
 
 .close {

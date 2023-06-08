@@ -1,77 +1,84 @@
-.choose{
+@use "color" as c;
+
+.choose {
   display: flex;
   flex-direction: column;
+  &__heading {
+    margin-bottom: 50px;
+    margin-left: 150px;
+    margin-right: 100px;
+    &Text {
+      font-weight: normal;
+      font-size: 24px;
+      color: c.$button-hover-color;
+    }
+    &Content {
+      display: flex;
+      justify-content: space-between;
+      gap: 200px;
+      margin-top: 30px;
+      &Subtitle {
+        font-size: 36px;
+      }
+    }
+  }
 
-}
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-right: 80px;
+    &1 {
+      margin: 0 auto;
+      padding: 10px 50px;
+      padding-bottom: 70px;
+      width: 250px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+    }
 
-.choose--heading{
-  margin-bottom: 50px;
-  margin-left: 150px;
-  margin-right: 100px;
-}
+    &2 {
+      margin: 0 auto;
+      padding: 10px 50px;
+      padding-bottom: 70px;
+      width: 250px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      &Text {
+        padding-bottom: 22px;
+      }
+    }
 
-.choose--headingContent{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
+    &3 {
+      margin: 0 auto;
+      padding: 10px 50px;
+      padding-bottom: 70px;
+      width: 250px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+    }
+  }
 
-.subTitle{
-  margin-right: 200px;
-  font-size: 36px;
-}
+  img {
+    height: 100px;
+  }
 
-.choose--cards{
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  margin-left: 150px;
-  margin-right: 80px;
-  margin-top: 80px;
-}
-
-.choose--cards1{
-  border: 1px solid black;
-  padding: 5px 50px;
-  padding-bottom: 45px;
-  padding-top: 25px;
-  width: 250px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
-
-.choose--cards2{
-  border: 1px solid black;
-  padding: 5px 50px;
-  padding-bottom: 45px;
-  padding-top: 25px;
-  width: 250px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
-
-.choose--cards3{
-  border: 1px solid black;
-  padding: 5px 50px;
-  padding-bottom: 45px;
-  padding-top: 25px;
-  width: 250px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
-
-.choose--cards1Heading{
-  margin-bottom: 20px;
+  h4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
 }

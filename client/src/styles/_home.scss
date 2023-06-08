@@ -1,23 +1,18 @@
-.homeContainer{
+.homeContainer {
   margin-top: 150px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
+  &__links {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-.homeContainer--links{
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.homeTitle{
-  font-size: 20px;
-}
-
-.homeContainer--About{
-  margin-top: 100px;
-  padding-bottom: 50px;
-  background-color: #E2F0FD;
+  &__About {
+    margin-top: 100px;
+    padding-bottom: 50px;
+    background-color: #e2f0fd;
+  }
 }

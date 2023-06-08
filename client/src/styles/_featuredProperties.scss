@@ -12,42 +12,37 @@
 
   &__img {
     height: 173px;
-    /* Adjust the height as desired */
     object-fit: cover;
     border-radius: 8px;
-    /* Add border radius */
     margin: 0 auto;
-    /* Center the images horizontally */
   }
-}
 
+  &__name {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: -5px;
+  }
 
+  &__city {
+    font-weight: 300;
+    margin-bottom: -5px;
+  }
 
+  &__price {
+    font-weight: 500;
+  }
 
-.fp__name {
-  color: #333;
-  font-weight: bold;
-  margin-bottom: -5px;
-}
-
-.fp__city {
-  font-weight: 300;
-  margin-bottom: -5px;
-}
-
-.fp__price {
-  font-weight: 500;
-}
-
-.fp__rating>button {
-  background-color: #003580;
-  color: white;
-  border: none;
-  padding: 3px;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.fp__rating>span {
-  font-size: 14px;
+  &__rating {
+    & > button {
+      background-color: #003580;
+      color: white;
+      border: none;
+      padding: 3px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    & > span {
+      font-size: 14px;
+    }
+  }
 }

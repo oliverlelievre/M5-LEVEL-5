@@ -1,7 +1,8 @@
-import useFetch from "../../hooks/useFetch";
-import "../../styles/_propertyList.scss";
+import React from "react";
+import useFetch from "../hooks/useFetch";
+import "../styles/_propertyList.scss";
 
-const PropertyList = () => {
+const PropertyList= () => {
   const { data, loading, error } = useFetch(
     "http://localhost:8800/api/properties/countByType"
   );

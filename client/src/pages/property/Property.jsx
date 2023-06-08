@@ -14,9 +14,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 // import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import useFetch from "../../hooks/useFetch";
-import Navbar from "../../components/navbar/Navbar";
-import ContactModal from "../../components/ContactModal/ContactModal";
-import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/Navbar";
+import ContactModal from "../../components/ContactModal";
+import Footer from "../../components/Footer";
 // import Reserve from "../../components/reserve/Reserve";
 
 const Property = () => {
@@ -90,7 +90,7 @@ const Property = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="propertyContainer">
+        <div className="property__Container">
           <ContactModal
             isOpen={openModal}
             onClose={() => setOpenModal(false)}
@@ -109,11 +109,11 @@ const Property = () => {
                 onClick={() => handleMove("l")}
               />
 
-              <div className="sliderWrapper">
+              <div className="slider__Wrapper">
                 <img
                   src={photos[slideNumber].src}
                   alt=""
-                  className="sliderImg"
+                  className="slider__Img"
                 />
               </div>
 
@@ -124,43 +124,50 @@ const Property = () => {
               />
             </div>
           )}
-          <div className="propertyWrapper">
-            <div className="propertyDetails">
-              <h1 className="propertyTitle">{data.name}</h1>
-              <p className="propertyAddress">{data.address}</p>
-              <span className="propertyPrice">
+          <div className="property__Wrapper">
+            <div className="property__WrapperDetails">
+              <h1 className="property__WrapperDetailsTitle">{data.name}</h1>
+              <p className="property__WrapperDetailsAddress">{data.address}</p>
+              <span className="property__WrapperDetailsPrice">
                 ${data.roomPrice} /per week
               </span>
-              <span className="siCancelOp">
-                <img className="siEssentials" src={bed} alt="" />
-                {" "}{data.bedrooms}{" "}bedrooms{" "}
-                <img className="siEssentials" src={bath} alt="" />{" "}{data.bathrooms}{" "}bathrooms
+              <span className="property__Essentials">
+                <img className="property__EssentialsImages" src={bed} alt="" />{" "}
+                {data.bedrooms} bedrooms{" "}
+                <img className="property__EssentialsImages" src={bath} alt="" />{" "}
+                {data.bathrooms} bathrooms
               </span>
-              <p className="propertyDesc">{data.description}</p>
-              <h1 className="propertyList">
+              <p className="property__Desc">{data.description}</p>
+              <h1 className="property__List">
                 Listed{" "}
                 {data.createdAt &&
                   formatDistanceToNow(new Date(data.createdAt), {
                     addSuffix: true,
                   })}
               </h1>
-              <div className="propertyButtons">
-                <button className="button1" onClick={() => setOpenModal(true)}>
+              <div className="property__Buttons">
+                <button
+                  className="property__Buttons1"
+                  onClick={() => setOpenModal(true)}
+                >
                   Request a viewing
                 </button>
-                <button className="button2" onClick={() => setOpenModal(true)}>
+                <button
+                  className="property__Buttons2"
+                  onClick={() => setOpenModal(true)}
+                >
                   Apply
                 </button>
               </div>
             </div>
-            <div className="propertyImages">
+            <div className="property__Images">
               {photos?.map((photo, i) => (
-                <div className="propertyImgWrapper" key={i}>
+                <div className="property__ImgWrapper" key={i}>
                   <img
                     onClick={() => handleOpen(i)}
                     src={photo.src}
                     alt=""
-                    className="propertyImg"
+                    className="Img"
                   />
                 </div>
               ))}

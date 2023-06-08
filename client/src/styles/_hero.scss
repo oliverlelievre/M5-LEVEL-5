@@ -1,6 +1,6 @@
 @use "utils" as u;
 
-.header{
+.header {
   @include u.background("../images/background.png");
   position: relative;
   height: 300px;
@@ -9,19 +9,20 @@
   justify-content: center;
 }
 
-.hero--heading{
-  display: flex;
-  justify-content: center;
-  padding-top: 100px;
+.hero {
+  &__heading {
+    display: flex;
+    justify-content: center;
+    padding-top: 95px;
+    font-weight: 450;
+    font-size: 32px;
+  }
+  &__subTitle {
+    display: flex;
+    justify-content: center;
+  }
+  &__searchBar {
+    display: flex;
+    justify-content: center;
+  }
 }
-
-.hero--subTitle{
-  display: flex;
-  justify-content: center;
-}
-
-.hero--searchBar{
-  display: flex;
-  justify-content: center;
-}
-

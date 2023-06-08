@@ -7,113 +7,112 @@
   width: 600px;
 }
 
-.siImg {
-  width: 600px;
-  height: 450px;
-  margin-bottom: 30px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
+.si {
+  &__Img {
+    width: 600px;
+    height: 450px;
+    margin-bottom: 30px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+  }
 
-.siDesc {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 2;
-}
+  &__Desc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+  }
 
-.siTitle {
-  display: flex;
-  justify-content: flex-start;
-  font-size: 20px;
-  color: c.$secondary-color;
-}
+  &__Title {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    color: c.$secondary-color;
+  }
 
-.siDistance {
-  font-size: 12px;
-}
+  &__Distance {
+    font-size: 12px;
+  }
 
-.siSubtitle{
-  font-size: 12px;
-  font-weight: bold;
-}
+  &__Subtitle {
+    font-size: 12px;
+    font-weight: bold;
+  }
 
-.siFeatures{
-  font-size: 12px;
-}
+  &__Features {
+    font-size: 12px;
+  }
 
-.siCancelOp{
-  font-size: 12px;
-  color: #B7B7B7;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+  &__CancelOp {
+    font-size: 12px;
+    color: #b7b7b7;
+    font-weight: bold;
+    margin-bottom: 10px;
+    &Images {
+      height: 15px;
+    }
+  }
 
+  &__Details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-.siEssentials{
-  height: 15px;
-}
+  &__Rating {
+    display: flex;
+    justify-content: space-between;
 
-.siDetails {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between
-}
+    & > span {
+      font-weight: 500;
+    }
 
-.siRating{
-  display: flex;
-  justify-content: space-between
-}
+    & > button {
+      background-color: #003580;
+      color: white;
+      padding: 5px;
+      font-weight: bold;
+      border: none;
+    }
+  }
+  &__DetailTexts {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 
-.siRating>span{
-  font-weight: 500;
-}
-.siRating>button{
- background-color: #003580;
- color: white;
- padding: 5px;
- font-weight: bold;
- border: none;
-}
+  &__Price {
+    font-size: 24px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: flex-start;
+  }
 
-.siDetailTexts{
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+  &__TaxOp {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: gray;
+  }
 
-.siPrice{
-  font-size: 24px;
-  font-weight: bolder;
-  display: flex;
-  justify-content: flex-start;
-}
+  &__CheckButton {
+    display: flex;
+    justify-content: flex-start;
+    background-color: c.$secondary-color;
+    color: white;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    transition: 0.15s background-color;
 
-.siTaxOp{
-  display: flex;
-  justify-content: flex-start;
-  font-size: 12px;
-  color: gray;
-}
-
-.siCheckButton{
-  display: flex;
-  justify-content: flex-start;
-  background-color: c.$secondary-color;
-  color: white;
-  font-weight: bold;
-  padding: 10px 5px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.15s background-color;
-
-  &:hover{
-    background-color: c.$button-hover-color;
+    &:hover {
+      background-color: c.$button-hover-color;
+    }
   }
 }
-
-

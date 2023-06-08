@@ -1,71 +1,75 @@
-.fb--heading{
-  margin-left: 150px;
-  color: rgb(128, 160, 247);
+.fb {
+  &__heading {
+    margin-left: 150px;
+    font-size: 24px;
+    font-weight: normal;
+    color: rgb(128, 160, 247);
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-left: 150px;
+    margin-right: 80px;
+    margin-top: 80px;
+    &1 {
+      width: 350px;
+      display: grid;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+    }
+
+    &2 {
+      width: 350px;
+      display: grid;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+    }
+
+    &3 {
+      width: 350px;
+      display: grid;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+    }
+  }
 }
 
-.fb--cards{
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  margin-left: 150px;
-  margin-right: 80px;
-  margin-top: 80px;
+.cards {
+  &1Image {
+    width: 350px;
+    height: 220px;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  &2Image {
+    width: 350px;
+    height: 220px;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  &3Image {
+    width: 350px;
+    height: 220px;
+    border-radius: 15px 15px 0px 0px;
+  }
 }
 
-.fb--cards1{
-  border: 1px solid black;
-  padding-bottom: 45px;
-  width: 350px;
-  display: grid;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
-
-.cards1Image{
-  width: 350px;
-  border-radius: 15px 15px 0px 0px;
-}
-
-.fb--cards2{
-  border: 1px solid black;
-  padding-bottom: 45px;
-  width: 350px;
-  display: grid;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
-
-.cards2Image{
-  width: 350px;
-  border-radius: 15px 15px 0px 0px;
-}
-
-.fb--cards3{
-  border: 1px solid black;
-  padding-bottom: 45px;
-  width: 350px;
-  display: grid;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
-}
-
-.cards3Image{
-  width: 350px;
-  border-radius: 15px 15px 0px 0px;
-}
-
-.cards--heading{
-  margin-top: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.card--readMore{
-  margin-top: 10px;
-  margin-left: 30px;
-  font-size: 16px;
-  color: rgb(128, 160, 247);
+.cards {
+  &__heading {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  &__readMore {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: rgb(128, 160, 247);
+  }
 }

@@ -1,15 +1,15 @@
-import Choose from "../../components/choose/Choose";
-import Blog from "../../components/blog/Blog";
-import Footer from "../../components/footer/Footer";
-import Hero from "../../components/hero/hero";
-import Navbar from "../../components/navbar/Navbar";
-import About from "../../components/about/About";
-import Response from "../../components/response/Response";
-import HomeContact from "../../components/homeContact/homeContact";
-import Featured from "../../components/featured/Featured";
-import PropertyList from "../../components/propertyList/PropertyList";
-import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
-
+import Choose from "../../components/Choose";
+import News from "../../components/News";
+import Footer from "../../components/Footer";
+import Hero from "../../components/Hero";
+import Navbar from "../../components/Navbar";
+import About from "../../components/About";
+import Response from "../../components/Response";
+import HomeContact from "../../components/HomeContact";
+import Featured from "../../components/Featured";
+import PropertyList from "../../components/PropertyList";
+import FeaturedProperties from "../../components/FeaturedProperties";
+import React from "react";
 import "../../styles/styles.scss";
 
 const Home = () => {
@@ -18,16 +18,16 @@ const Home = () => {
       <Navbar />
       <Hero />
       <div className="homeContainer">
-        <div className="homeContainer--links">
+        <div className="homeContainer__links">
         <Featured />
         <PropertyList />
         <FeaturedProperties />
         </div>
         <Choose />
-        <div className="homeContainer--About">
+        <div className="homeContainer__About">
           <About />
         </div>
-        <Blog />
+        <News />
         <Response />
         <HomeContact />
         <Footer />

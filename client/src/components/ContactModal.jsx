@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../../styles/_contactModal.scss"
+import "../styles/_contactModal.scss"
 
 const ContactModal = ({ isOpen, onClose, id }) => {
   const [title, setTitle] = useState("");

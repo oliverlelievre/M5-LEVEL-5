@@ -1,5 +1,6 @@
-import useFetch from "../../hooks/useFetch";
-import "../../styles/_featuredProperties.scss";
+import React from "react";
+import useFetch from "../hooks/useFetch";
+import "../styles/_featuredProperties.scss";
 
 const FeaturedProperties = () => {
   const { data, loading, error } = useFetch(
