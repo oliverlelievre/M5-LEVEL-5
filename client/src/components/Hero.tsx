@@ -4,7 +4,7 @@ import location from "../images/location.png";
 import SearchBar from "./SearchBar";
 import React from "react";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div className="header">
       <div className="hero">

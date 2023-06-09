@@ -5,7 +5,7 @@ import facebook from "../images/Facebook.png";
 import linkedin from "../images/Linkedin.png";
 import React from "react";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className="footer">
       <div className="footer__Lists">

@@ -2,7 +2,7 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 import "../styles/_propertyList.scss";
 
-const PropertyList= () => {
+const PropertyList: React.FC= () => {
   const { data, loading, error } = useFetch(
     "http://localhost:8800/api/properties/countByType"
   );
@@ -22,13 +22,13 @@ const PropertyList= () => {
       ) : (
         <>
           {data &&
-            images.map((img, i) => (
+            (data as any[]).map((item, i) => (
               <div className="pList__item" key={i}>
-                <img src={img} alt="" className="pList__img" />
+                <img src={images[i]} alt="" className="pList__img" />
                 <div className="pList__titles">
-                  <h1>{data[i]?.type}</h1>
+                  <h1>{item.type}</h1>
                   <h2>
-                    {data[i]?.count} {data[i]?.type}
+                    {item.count} {item.type}
                   </h2>
                 </div>
               </div>

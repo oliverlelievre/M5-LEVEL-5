@@ -4,8 +4,12 @@ import bed from "../images/Bed.png";
 import bath from "../images/bathroom.png";
 import React from "react";
 
+interface Item{
+  item: any
+}
 
-const SearchItem = ({ item })=> {
+
+const SearchItem: React.FC<Item> = ({ item })=> {
   if (!item) {
     return null;
   }

@@ -12,7 +12,7 @@ import FeaturedProperties from "../../components/FeaturedProperties";
 import React from "react";
 import "../../styles/styles.scss";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div>
       <Navbar />

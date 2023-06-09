@@ -6,14 +6,14 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DateRange, Range } from "react-date-range";
+import { DateRange } from "react-date-range";
 import React, { useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
+const SearchBar: React.FC = () => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
@@ -24,8 +24,8 @@ const SearchBar = () => {
     },
   ]);
 
-  const handleDateChange = (item) => {
-    const { startDate, endDate } = item.selection;
+  const handleDateChange = (day: any) => {
+    const { startDate, endDate } = day.selection;
     const updatedDate = [
       {
         startDate: startDate || null,
@@ -44,7 +44,7 @@ const SearchBar = () => {
 
   const navigate = useNavigate();
 
-  const handleOption = (name, operation) => {
+  const handleOption = (name: keyof typeof options, operation: "i" | "d") => {
     setOptions((prev) => {
       return {
         ...prev,
@@ -80,7 +80,7 @@ const SearchBar = () => {
         {openDate && (
           <DateRange
             editableDateInputs={true}
-            onChange={(item) => setDate([item.selection])}
+            onChange={(day:any) => setDate([day.selection])}
             moveRangeOnFirstSelection={false}
             ranges={date}
             className="date"

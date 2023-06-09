@@ -9,14 +9,14 @@ import useFetch from "../../hooks/useFetch";
 import Footer from "../../components/Footer";
 import HomeContact from "../../components/HomeContact";
 
-const List = () => {
+const List: React.FC = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [date, setDate] = useState(location.state.date);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
-  const [min, setMin] = useState(undefined);
-  const [max, setMax] = useState(undefined);
+  const [min, setMin] = useState<Number | undefined> (undefined);
+  const [max, setMax] = useState<Number | undefined> (undefined);
 
   const { data, loading, error, reFetch } = useFetch(
     `http://localhost:8800/api/properties?city=${destination}&min=${
@@ -63,7 +63,7 @@ const List = () => {
                   </span>
                   <input
                     type="number"
-                    onChange={(e) => setMin(e.target.value)}
+                    onChange={(e) => setMin(Number(e.target.value))}
                     className="ls__OptionInput"
                   />
                 </div>
@@ -73,7 +73,7 @@ const List = () => {
                   </span>
                   <input
                     type="number"
-                    onChange={(e) => setMax(e.target.value)}
+                    onChange={(e) => setMax(Number(e.target.value))}
                     className="ls__OptionInput"
                   />
                 </div>
@@ -104,12 +104,11 @@ const List = () => {
               "loading"
             ) : (
               <>
-                {data.map((item) => (
+                {(data).map((item: any) => (
                   <SearchItem item={item} key={item._id} />
                 ))}
               </>
             )}
-            <SearchItem />
           </div>
         </div>
       </div>
