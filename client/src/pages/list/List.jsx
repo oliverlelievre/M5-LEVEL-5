@@ -1,11 +1,11 @@
 import "../../styles/_list.scss";
-import Navbar from "../../../../../Lv5-Software-dev/Mission-5-LV5-ADV/M5-LEVEL-5/client/src/components/Navbar";
+import Navbar from "../../components/Navbar";
 import { useLocation } from "react-router-dom";
 import React, { useState, ChangeEvent } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/SearchItem";
-import useFetch from "../../../../../Lv5-Software-dev/Mission-5-LV5-ADV/M5-LEVEL-5/client/src/hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 import Footer from "../../components/Footer";
 import HomeContact from "../../components/HomeContact";
 
