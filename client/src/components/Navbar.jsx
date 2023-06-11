@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import logoImage from "../images/Logo.png";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const { user } = useContext(AuthContext);
 
   return (

@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/_homeContact.scss"
 
-const HomeContact: React.FC = () => {
+const HomeContact = () => {
     
     return(
         <div className="homeContact">

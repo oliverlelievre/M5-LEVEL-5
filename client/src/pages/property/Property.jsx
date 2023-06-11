@@ -2,7 +2,7 @@ import "../../styles/_property.scss";
 import bed from "../../images/Bed.png";
 import bath from "../../images/bathroom.png";
 import { formatDistanceToNow } from "date-fns";
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -17,41 +17,18 @@ import useFetch from "../../hooks/useFetch";
 import Navbar from "../../components/Navbar";
 import ContactModal from "../../components/ContactModal";
 import Footer from "../../components/Footer";
-import axios from "axios";
 // import Reserve from "../../components/reserve/Reserve";
 
-interface PropertyData {
-  name: string;
-  address: string;
-  roomPrice: number;
-  bedrooms: number;
-  bathrooms: number;
-  description: string;
-  createdAt: string;
-}
-
-
-const Property: React.FC = () => {
+const Property = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const [data, setData] = useState<PropertyData | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(`http://localhost:8800/api/properties/find/${id}`);
-      setData(response.data);
-      setLoading(false);
-    } catch (error) {
-      setError("An error occurred while fetching the data.");
-      setLoading(false);
-    }
-  };
+  const { data, loading, error } = useFetch(
+    `http://localhost:8800/api/properties/find/${id}`
+  );
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -64,7 +41,7 @@ const Property: React.FC = () => {
   //   return diffDays;
   // };
 
-  // const days = dates && dates ? dayDifference(dates.endDate, dates.startDate) : 0;
+  // const days = dates && dates[0] ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
   const photos = [
     {
       src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
@@ -86,12 +63,12 @@ const Property: React.FC = () => {
     },
   ];
 
-  const handleOpen = (i: number) => {
+  const handleOpen = (i) => {
     setSlideNumber(i);
     setOpen(true);
   };
 
-  const handleMove = (direction: string) => {
+  const handleMove = (direction) => {
     let newSlideNumber;
 
     if (direction === "l") {
@@ -106,12 +83,6 @@ const Property: React.FC = () => {
   const handleClick = () => {
     setOpenModal(true);
   };
-
-  useEffect(() => {
-    if (data) {
-      setOpenModal(false);
-    }
-  }, [data]);
 
   return (
     <div>
@@ -154,7 +125,6 @@ const Property: React.FC = () => {
             </div>
           )}
           <div className="property__Wrapper">
-          {data && (
             <div className="property__WrapperDetails">
               <h1 className="property__WrapperDetailsTitle">{data.name}</h1>
               <p className="property__WrapperDetailsAddress">{data.address}</p>
@@ -190,7 +160,6 @@ const Property: React.FC = () => {
                 </button>
               </div>
             </div>
-          )}
             <div className="property__Images">
               {photos?.map((photo, i) => (
                 <div className="property__ImgWrapper" key={i}>

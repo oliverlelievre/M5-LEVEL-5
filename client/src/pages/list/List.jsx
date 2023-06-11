@@ -1,22 +1,22 @@
 import "../../styles/_list.scss";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../../../../Lv5-Software-dev/Mission-5-LV5-ADV/M5-LEVEL-5/client/src/components/Navbar";
 import { useLocation } from "react-router-dom";
 import React, { useState, ChangeEvent } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/SearchItem";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../../../../Lv5-Software-dev/Mission-5-LV5-ADV/M5-LEVEL-5/client/src/hooks/useFetch";
 import Footer from "../../components/Footer";
 import HomeContact from "../../components/HomeContact";
 
-const List: React.FC = () => {
+const List = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [date, setDate] = useState(location.state.date);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
-  const [min, setMin] = useState<Number | undefined> (undefined);
-  const [max, setMax] = useState<Number | undefined> (undefined);
+  const [min, setMin] = useState(undefined);
+  const [max, setMax] = useState(undefined);
 
   const { data, loading, error, reFetch } = useFetch(
     `http://localhost:8800/api/properties?city=${destination}&min=${
@@ -63,7 +63,7 @@ const List: React.FC = () => {
                   </span>
                   <input
                     type="number"
-                    onChange={(e) => setMin(Number(e.target.value))}
+                    onChange={(e) => setMin(e.target.value)}
                     className="ls__OptionInput"
                   />
                 </div>
@@ -73,7 +73,7 @@ const List: React.FC = () => {
                   </span>
                   <input
                     type="number"
-                    onChange={(e) => setMax(Number(e.target.value))}
+                    onChange={(e) => setMax(e.target.value)}
                     className="ls__OptionInput"
                   />
                 </div>
@@ -104,11 +104,12 @@ const List: React.FC = () => {
               "loading"
             ) : (
               <>
-                {(data).map((item: any) => (
+                {data.map((item) => (
                   <SearchItem item={item} key={item._id} />
                 ))}
               </>
             )}
+            <SearchItem />
           </div>
         </div>
       </div>

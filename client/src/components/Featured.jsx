@@ -2,7 +2,7 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 import "../styles/_featured2.scss";
 
-const Featured: React.FC= () => {
+const Featured= () => {
   const { data, loading, error } = useFetch(
     "http://localhost:8800/api/properties/countByCity?cities=Auckland,Wellington,Christchurch"
   );

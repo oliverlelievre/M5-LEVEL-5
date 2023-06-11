@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/_contactModal.scss"
 
-interface ContactModalProps {
-  isOpen: boolean;
-  onClose: (isOpen: boolean) => void;
-  id: string;
-}
-
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, id }) => {
+const ContactModal = ({ isOpen, onClose, id }) => {
   const [title, setTitle] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState(""); // Add phone state
 
-  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {

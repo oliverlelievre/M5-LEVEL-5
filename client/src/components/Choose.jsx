@@ -4,7 +4,7 @@ import house2 from "../images/House2.png";
 import key from "../images/Key.png";
 import "../styles/_choose.scss";
 
-const Choose: React.FC = () => {
+const Choose = () => {
   return (
     <div className="choose">
       <div className="choose__heading">

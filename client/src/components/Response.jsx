@@ -5,7 +5,7 @@ import alex from "../images/alex.png";
 import apartment from "../images/RedApartment.png";
 import React from "react";
 
-const Response: React.FC = () => {
+const Response = () => {
   return (
     <div className="response">
       <h4 className="response__heading">WHAT DO YOUR CUSTOMERS SAY?</h4>

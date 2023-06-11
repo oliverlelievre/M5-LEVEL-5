@@ -4,7 +4,7 @@ import news2 from "../images/news2.png";
 import news3 from "../images/news3.png";
 import "../styles/_blog.scss";
 
-const Blog: React.FC = () => {
+const Blog = () => {
 
   return (
   <div className="fb">
