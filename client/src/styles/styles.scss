@@ -1,4 +1,5 @@
 @use "color" as c;
+@use "media-queries" as m;
 @use "navbar";
 @use "hero";
 @use "featured2";
@@ -17,5 +18,6 @@ $font-stack: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 body {
   display: flex;
   justify-content: center;
+  max-width: 1920px;
   font-family: 100% $font-stack;
 }
