@@ -1,29 +1,31 @@
+@use "utils" as u;
+
 .pList {
-  gap: 20px;
+  gap: u.toRem(20);
   display: flex;
   justify-content: center;
 
   &__item {
-    border-radius: 10px;
+    border-radius: u.toRem(10);
     overflow: hidden;
     cursor: pointer;
   }
 
   &__img {
-    height: 150px;
+    height: u.toRem(150);
     object-fit: cover;
   }
 
   &__titles {
     > h1 {
-      font-size: 18px;
+      font-size: u.toRem(18);
       color: #444;
       text-transform: capitalize;
-      margin-bottom: 5px;
+      margin-bottom: u.toRem(5);
     }
 
     > h2 {
-      font-size: 14px;
+      font-size: u.toRem(14);
       font-weight: 300;
     }
   }

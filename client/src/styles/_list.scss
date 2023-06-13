@@ -1,37 +1,38 @@
 @use "color" as c;
+@use "utils" as u;
 
 .list {
   &__Container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: u.toRem(20);
     &Wrapper {
       width: 100%;
       display: flex;
-      gap: 20px;
-      margin-left: 20px;
+      gap: u.toRem(20);
+      margin-left: u.toRem(20);
       &Search {
-        padding: 10px;
-        border-radius: 15px;
+        padding: u.toRem(10);
+        border-radius: u.toRem(15);
         position: sticky;
-        top: 10px;
+        top: u.toRem(10);
         height: max-content;
         display: flex;
         flex-direction: column;
-        width: 400px;
+        width: u.toRem(400);
         &Title {
           font-weight: normal;
-          font-size: 24px;
+          font-size: u.toRem(24);
           color: c.$secondary-color;
-          margin-bottom: 10px;
+          margin-bottom: u.toRem(10);
         }
 
         & > button {
-          padding: 10px;
+          padding: u.toRem(10);
           background-color: white;
           color: c.$secondary-color;
           border: 1px solid black;
-          border-radius: 10px;
+          border-radius: u.toRem(10);
           width: 100%;
           font-weight: 500;
           cursor: pointer;
@@ -46,25 +47,25 @@
         &Item {
           display: flex;
           flex-direction: column;
-          gap: 5px;
-          margin-bottom: 10px;
+          gap: u.toRem(5);
+          margin-bottom: u.toRem(10);
           & > label {
-            font-size: 24px;
+            font-size: u.toRem(24);
           }
 
           & > input {
-            height: 30px;
-            padding: 5px;
+            height: u.toRem(30);
+            padding: u.toRem(5);
             border: 1px solid c.$secondary-color;
-            border-radius: 10px;
+            border-radius: u.toRem(10);
           }
 
           & > span {
-            height: 30px;
-            padding: 5px;
+            height: u.toRem(30);
+            padding: u.toRem(5);
             background-color: white;
-            border: 1px solid c.$secondary-color;
-            border-radius: 10px;
+            border: u.toRem(1) solid c.$secondary-color;
+            border-radius: u.toRem(10);
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -76,9 +77,9 @@
 
   &__Result {
     flex: 2;
-    margin-right: 20px;
-    border-radius: 15px;
-    padding: 20px 50px;
+    margin-right: u.toRem(20);
+    border-radius: u.toRem(15);
+    padding: u.toRem(20) u.toRem(50);
     background-color: #f8f9fa;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -88,27 +89,27 @@
 
 .ls {
   &__Options {
-    padding: 10px;
+    padding: u.toRem(10);
   }
 
   &__Option {
     &Item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: u.toRem(10);
       color: #555;
-      font-size: 12px;
+      font-size: u.toRem(12);
       &Input {
-        width: 50px;
+        width: u.toRem(50);
       }
     }
   }
 }
 
 .homeContact {
-  margin-top: 90px;
+  margin-top: u.toRem(90);
 }
 
 .footer {
-  margin-top: 90px;
+  margin-top: u.toRem(90);
 }

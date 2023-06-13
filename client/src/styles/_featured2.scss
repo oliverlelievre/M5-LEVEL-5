@@ -1,17 +1,19 @@
+@use "utils" as u;
+
 .featured {
-  gap: 20px;
+  gap: u.toRem(20);
   z-index: 1;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: u.toRem(20);
   &__item {
     position: relative;
     color: white;
-    border-radius: 10px;
+    border-radius: u.toRem(10);
     overflow: hidden;
-    height: 250px;
+    height: u.toRem(250);
     flex: 1;
-    max-width: 350px;
+    max-width: u.toRem(350);
   }
 
   &__img {
@@ -21,7 +23,7 @@
   }
   &__titles {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: u.toRem(20);
+    left: u.toRem(20);
   }
 }

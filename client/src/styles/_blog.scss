@@ -1,7 +1,9 @@
+@use "utils" as u;
+
 .fb {
   &__heading {
-    margin-left: 150px;
-    font-size: 24px;
+    margin-left: u.toRem(150);
+    font-size: u.toRem(24);
     font-weight: normal;
     color: rgb(128, 160, 247);
   }
@@ -10,66 +12,66 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    margin-left: 150px;
-    margin-right: 80px;
-    margin-top: 80px;
+    margin-left: u.toRem(150);
+    margin-right: u.toRem(80);
+    margin-top: u.toRem(80);
     &1 {
-      width: 350px;
+      width: u.toRem(350);
       display: grid;
-      border-radius: 15px;
+      border-radius: u.toRem(15);
       border: none;
-      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      box-shadow: u.toRem(1)  u.toRem(20)  u.toRem(20) rgba(0, 0, 0, 0.192);
     }
 
     &2 {
-      width: 350px;
+      width: u.toRem(350);
       display: grid;
-      border-radius: 15px;
+      border-radius: u.toRem(15);
       border: none;
-      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      box-shadow: u.toRem(1)  u.toRem(20)  u.toRem(20) rgba(0, 0, 0, 0.192);
     }
 
     &3 {
-      width: 350px;
+      width: u.toRem(350);
       display: grid;
-      border-radius: 15px;
+      border-radius: u.toRem(15);
       border: none;
-      box-shadow: 1px 20px 20px rgba(0, 0, 0, 0.192);
+      box-shadow: u.toRem(1)  u.toRem(20)  u.toRem(20) rgba(0, 0, 0, 0.192);
     }
   }
 }
 
 .cards {
   &1Image {
-    width: 350px;
-    height: 220px;
-    border-radius: 15px 15px 0px 0px;
+    width: u.toRem(350);
+    height: u.toRem(220);
+    border-radius: u.toRem(15) u.toRem(15) u.toRem(0) u.toRem(0);
   }
 
   &2Image {
-    width: 350px;
-    height: 220px;
-    border-radius: 15px 15px 0px 0px;
+    width: u.toRem(350);
+    height: u.toRem(220);
+    border-radius: u.toRem(15) u.toRem(15) u.toRem(0) u.toRem(0);
   }
 
   &3Image {
-    width: 350px;
-    height: 220px;
-    border-radius: 15px 15px 0px 0px;
+    width: u.toRem(350);
+    height: u.toRem(220);
+    border-radius: u.toRem(15) u.toRem(15) u.toRem(0) u.toRem(0);
   }
 }
 
 .cards {
   &__heading {
-    margin-top: 10px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: u.toRem(10);
+    margin-left:  u.toRem(30);
+    margin-right:  u.toRem(30);
   }
   &__readMore {
-    margin-top: 10px;
-    margin-left: 30px;
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-top: u.toRem(10);
+    margin-left: u.toRem(30);
+    margin-bottom: u.toRem(10);
+    font-size: u.toRem(16);
     color: rgb(128, 160, 247);
   }
 }

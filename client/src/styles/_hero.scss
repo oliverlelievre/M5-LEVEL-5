@@ -3,8 +3,8 @@
 .header {
   @include u.background("../images/background.png");
   position: relative;
-  height: 300px;
-  width: 1920px;
+  height: u.toRem(300);
+  width: u.toRem(1920);
   display: flex;
   justify-content: center;
 }
@@ -13,9 +13,9 @@
   &__heading {
     display: flex;
     justify-content: center;
-    padding-top: 95px;
+    padding-top: u.toRem(95);
     font-weight: 450;
-    font-size: 32px;
+    font-size: u.toRem(32);
   }
   &__subTitle {
     display: flex;

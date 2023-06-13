@@ -6,9 +6,9 @@
   margin: 0 auto;
   &__Image {
     @include u.background("../images/RedApartment.png");
-    height: 500px;
-    width: 1200px;
-    border-radius: 15px;
+    height: u.toRem(500);
+    width: u.toRem(1200);
+    border-radius: u.toRem(15);
   }
 
   &__details {
@@ -16,22 +16,22 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
-    padding-right: 200px;
-    padding-top: 100px;
-    gap: 30px;
+    padding-right: u.toRem(200);
+    padding-top: u.toRem(100);
+    gap: u.toRem(30);
     color: white;
-    text-shadow: 1px 2px rgba(0, 0, 0, 0.274);
+    text-shadow: u.toRem(1) u.toRem(2) rgba(0, 0, 0, 0.274);
   }
 
   &__touch {
-    font-size: 48px;
+    font-size: u.toRem(48);
   }
 
   &__email {
-    font-size: 32px;
+    font-size: u.toRem(32);
   }
 
   &__phone {
-    font-size: 32px;
+    font-size: u.toRem(32);
   }
 }

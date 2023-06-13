@@ -1,4 +1,5 @@
 @use "color" as c;
+@use "utils" as u;
 
 .modal {
   position: sticky;
@@ -15,10 +16,10 @@
 
   &__content {
     background-color: white;
-    padding-top: 70px;
-    padding-left: 40px;
-    padding-bottom: 70px;
-    border-radius: 15px;
+    padding-top: u.toRem(70);
+    padding-left: u.toRem(40);
+    padding-bottom: u.toRem(70);
+    border-radius: u.toRem(15);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -87,7 +88,7 @@
       background-color: white;
       border: 0.2rem solid c.$primary-color;
       border-radius: 0.3rem;
-      padding: 10px 20px;
+      padding: u.toRem(10) u.toRem(20);
       transition: 0.2s background-color;
       &:hover {
         background-color: c.$button-hover-color;

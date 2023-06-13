@@ -1,92 +1,93 @@
 @use "color" as c;
+@use "utils" as u;
 
 .property {
   &__Container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: u.toRem(20);
   }
 
   &__Wrapper {
     display: flex;
-    gap: 100px;
+    gap: u.toRem(100);
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: u.toRem(50);
     &Details {
       display: flex;
       flex-direction: column;
-      width: 500px;
+      width: u.toRem(500);
 
       &Title {
-        font-size: 32px;
+        font-size: u.toRem(32);
       }
 
       &Address {
-        font-size: 18px;
+        font-size: u.toRem(18);
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: u.toRem(10);
       }
 
       &Price {
         color: black;
         font-weight: bold;
-        font-size: 18px;
-        margin-top: 30px;
-        margin-bottom: 50px;
+        font-size: u.toRem(18);
+        margin-top: u.toRem(30);
+        margin-bottom: u.toRem(50);
       }
     }
   }
 
   &__Essentials {
-    margin-bottom: 50px;
+    margin-bottom: u.toRem(50);
     &Images {
-      height: 25px;
+      height: u.toRem(25);
     }
   }
 
   &__Desc {
-    font-size: 14px;
+    font-size: u.toRem(14);
     line-height: 2.3;
-    margin-top: 20px;
+    margin-top: u.toRem(20);
   }
 
   &__List {
-    font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    font-size: u.toRem(24);
+    margin-top: u.toRem(20);
+    margin-bottom: u.toRem(40);
   }
 
   &__Buttons {
     &1 {
-      margin-right: 50px;
-      width: 180px;
-      height: 45px;
+      margin-right: u.toRem(50);
+      width: u.toRem(180);
+      height: u.toRem(45);
       background-color: white;
-      border: 1px solid c.$secondary-color;
-      border-radius: 10px;
+      border: u.toRem(1) solid c.$secondary-color;
+      border-radius: u.toRem(10);
       transition: 0.2s background-color;
       &:hover {
         background-color: c.$button-hover-color;
         color: white;
         cursor: pointer;
-        border: 1px solid c.$primary-color;
+        border: u.toRem(1) solid c.$primary-color;
       }
     }
 
     &2 {
-      width: 180px;
-      height: 45px;
+      width: u.toRem(180);
+      height: u.toRem(45);
       background-color: white;
-      border: 1px solid c.$secondary-color;
-      border-radius: 10px;
+      border: u.toRem(1) solid c.$secondary-color;
+      border-radius: u.toRem(10);
       transition: 0.2s background-color;
       &:hover {
         background-color: c.$button-hover-color;
         color: white;
         cursor: pointer;
-        border: 1px solid c.$primary-color;
+        border: u.toRem(1) solid c.$primary-color;
       }
     }
   }
@@ -94,18 +95,18 @@
   &__Images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-radius: 45px;
-    margin-left: 300px;
+    border-radius: u.toRem(45);
+    margin-left: u.toRem(300);
   }
 
   &__ImgWrapper {
-    padding: 10px;
-    width: 300px;
+    padding: u.toRem(10);
+    width: u.toRem(300);
   }
 }
 
 .Img {
-  width: 300px;
+  width: u.toRem(300);
   object-fit: cover;
   cursor: pointer;
 }
@@ -136,16 +137,16 @@
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
+  top: u.toRem(20);
+  right: u.toRem(20);
+  font-size: u.toRem(30);
   color: lightgray;
   cursor: pointer;
 }
 
 .arrow {
-  margin: 20px;
-  font-size: 50px;
+  margin: u.toRem(20);
+  font-size: u.toRem(50);
   color: lightgray;
   cursor: pointer;
 }

@@ -1,13 +1,15 @@
+@use "utils" as u;
+
 .About {
-  margin-top: 50px;
-  margin-left: 150px;
-  margin-right: 100px;
+  margin-top: u.toRem(50);
+  margin-left: u.toRem(150);
+  margin-right: u.toRem(100);
   &__heading {
-    margin-bottom: 60px;
+    margin-bottom: u.toRem(60);
     text-align: center;
     color: #81adee;
     font-weight: bold;
-    font-size: 24px;
+    font-size: u.toRem(24);
   }
 
   &__contents {
@@ -20,7 +22,7 @@
 }
 
 .video {
-  height: 350px;
-  margin-right: 200px;
-  margin-bottom: 80px;
+  height: u.toRem(350);
+  margin-right: u.toRem(200);
+  margin-bottom: u.toRem(80);
 }

@@ -1,26 +1,27 @@
 @use "color" as c;
+@use "utils" as u;
 
 .header {
   &__Icon {
     color: lightgray;
-    padding-left: 5px;
+    padding-left: u.toRem(5);
   }
 
   &__Search {
-    height: 30px;
+    height: u.toRem(30);
     background-color: white;
-    border: 3px solid c.$button-hover-color;
+    border: u.toRem(3) solid c.$button-hover-color;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 10px 0px;
-    border-radius: 15px;
+    padding: u.toRem(10) u.toRem(0);
+    border-radius: u.toRem(15);
     width: 100%;
-    max-width: 1024px;
+    max-width: u.toRem(1024);
     &Item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: u.toRem(10);
     }
 
     &Input {
@@ -39,9 +40,9 @@
     color: white;
     font-weight: 500;
     border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-right: 5px;
+    border-radius: u.toRem(5);
+    padding: u.toRem(10);
+    margin-right: u.toRem(5);
     cursor: pointer;
     transition: 0.5s background-color;
 
@@ -53,40 +54,40 @@
 
 .date {
   z-index: 2;
-  top: 1px;
+  top: u.toRem(1);
   position: absolute;
 }
 
 .options {
   z-index: 2;
-  top: 255px;
+  top: u.toRem(255);
   position: absolute;
   background-color: white;
   color: gray;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  border-radius: u.toRem(5);
+  -webkit-box-shadow: u.toRem(0) u.toRem(0) u.toRem(10) u.toRem(-5px) rgba(0, 0, 0, 0.4);
+  box-shadow: u.toRem(0) u.toRem(0) u.toRem(10) u.toRem(-5px) rgba(0, 0, 0, 0.4);
 }
 
 .option {
   &__Item {
-    width: 200px;
+    width: u.toRem(200);
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
-    margin: 10px;
+    margin: u.toRem(10);
   }
 
   &__Counter {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 12px;
+    gap: u.toRem(10);
+    font-size: u.toRem(12);
     color: c.$secondary-color;
     &Button {
-      width: 30px;
-      height: 30px;
-      border: 1px solid #0071c2;
+      width: u.toRem(30);
+      height: u.toRem(30);
+      border: u.toRem(1) solid #0071c2;
       color: #0071c2;
       cursor: pointer;
       background-color: white;

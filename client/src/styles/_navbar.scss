@@ -1,32 +1,28 @@
 @use "media-queries" as m;
+@use "utils" as u;
 
 .navbar {
-  height: 50px;
+  height: u.toRem(100);
   background-color: white;
   display: flex;
   justify-content: center;
-  padding: 28px 00px;
+  padding: u.toRem(28) u.toRem(0);
   &__container {
-    width: 100%;
+    width: u.toRem(100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: u.toRem(1200);
     &LogoImage {
-      margin-left: 50px;
-      width: 300px;
+      width: u.toRem(300);
     }
   }
 }
 
 .nav {
-  &__Items {
-    margin-right: 200px;
-  }
-
   &__Button {
-    margin-left: 20px;
     border: none;
-    padding: 5px 10px;
+    padding: u.toRem(5 10);
     cursor: pointer;
     color: black;
     background-color: white;
