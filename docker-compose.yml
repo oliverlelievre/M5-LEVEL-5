@@ -16,7 +16,7 @@ services:
     ports:
       - "8800:8800"
     environment:
-      - MONGO_URI=mongodb://mongodb:27017/MERNapp
+      - MONGO_URI=mongodb://mongodb:27017
 
   mongodb:
     image: mongo
