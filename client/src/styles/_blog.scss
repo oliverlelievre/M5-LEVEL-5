@@ -1,11 +1,22 @@
 @use "utils" as u;
-
+@use "media-queries" as m;
 .fb {
+  @include m.mobile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: u.toRem(50);
+  }
   &__heading {
     margin-left: u.toRem(150);
     font-size: u.toRem(24);
     font-weight: normal;
     color: rgb(128, 160, 247);
+    @include m.mobile{
+      margin: 0 auto;
+      margin-bottom: u.toRem(100);
+    }
   }
 
   &__cards {
@@ -15,6 +26,13 @@
     margin-left: u.toRem(150);
     margin-right: u.toRem(80);
     margin-top: u.toRem(80);
+    @include m.mobile{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 auto;
+      gap: u.toRem(100);
+    }
     &1 {
       width: u.toRem(350);
       display: grid;

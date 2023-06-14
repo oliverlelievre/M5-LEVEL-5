@@ -1,7 +1,12 @@
 @use "color" as c;
 @use "utils" as u;
+@use "media-queries" as m;
 
 .header {
+  @include m.mobile{
+    margin-left: u.toRem(20);
+    margin-right: u.toRem(20);
+  }
   &__Icon {
     color: lightgray;
     padding-left: u.toRem(5);
@@ -27,6 +32,9 @@
     &Input {
       border: none;
       outline: none;
+      @include m.mobile{
+        font-size:9px;
+      }
     }
 
     &Text {

@@ -1,11 +1,16 @@
 @use "utils" as u;
-
+@use "media-queries" as m;
 .featured {
   gap: u.toRem(20);
   z-index: 1;
   display: flex;
   justify-content: center;
   margin-bottom: u.toRem(20);
+  @include m.mobile{
+    margin-top: u.toRem(50);
+    margin-left: u.toRem(20);
+    margin-right: u.toRem(20);
+  }
   &__item {
     position: relative;
     color: white;
@@ -25,5 +30,9 @@
     position: absolute;
     bottom: u.toRem(20);
     left: u.toRem(20);
+    @include m.mobile{
+      font-size: u.toRem(9);
+      left: u.toRem(10);
+    }
   }
 }

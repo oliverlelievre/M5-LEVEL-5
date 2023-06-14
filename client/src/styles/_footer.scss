@@ -1,5 +1,5 @@
 @use "utils" as u;
-
+@use "media-queries" as m;
 .footer {
   display: flex;
   justify-content: center;
@@ -7,11 +7,24 @@
   margin: 0 auto;
   width: u.toRem(900);
   font-size: u.toRem(12);
+  @include m.mobile{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   &__Lists {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: u.toRem(50);
+    @include m.mobile{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: u.toRem(20);
+      margin-left: u.toRem(20);
+      margin-right: u.toRem(20);
+    }
   }
 
   &__List {

@@ -1,11 +1,11 @@
 @use "utils" as u;
-
+@use "media-queries" as m;
 .fp {
   gap: u.toRem(20);
   display: flex;
   justify-content: center;
   margin-top: u.toRem(15);
-
+  
   &__item {
     gap: u.toRem(10);
     display: flex;

@@ -20,4 +20,10 @@ body {
   justify-content: center;
   max-width: 1920px;
   font-family: 100% $font-stack;
+  @include m.mobile {
+    display: flex;
+    justify-content: center;
+    font-family: 100% $font-stack;
+    flex-direction: column;
+  }
 }
