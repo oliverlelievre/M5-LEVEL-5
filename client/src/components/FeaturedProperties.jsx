@@ -4,7 +4,7 @@ import "../styles/_featuredProperties.scss";
 
 const FeaturedProperties = () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8800/api/properties?featured=true&limit=4"
+    "http://localhost:9000/api/properties?featured=true&limit=4"
   );
 
   return (

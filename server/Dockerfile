@@ -1,20 +1,15 @@
-# Use the official Node.js image as the base image
-FROM node:14-alpine
+FROM node:18-alpine
 
-# Set the working directory inside the container
-WORKDIR /app
+RUN mkdir -p src/app
 
-# Copy the package.json and yarn.lock files to the container
-COPY package.json yarn.lock ./
+WORKDIR /src/app
 
-# Install project dependencies using yarn
+COPY package.json yarn.lock /src/app/
+
 RUN yarn install
 
-# Copy the entire project to the container
-COPY . .
+COPY . /src/app
 
-# Expose the port your app will run on
-EXPOSE 8800
+EXPOSE 9000
 
-# Set the startup command to run the app
-CMD ["yarn", "start"]
+CMD [ "yarn", "start"]

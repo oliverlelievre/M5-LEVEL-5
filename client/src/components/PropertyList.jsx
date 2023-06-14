@@ -4,7 +4,7 @@ import "../styles/_propertyList.scss";
 
 const PropertyList= () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8800/api/properties/countByType"
+    "http://localhost:9000/api/properties/countByType"
   );
 
   const images = [

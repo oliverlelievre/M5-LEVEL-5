@@ -4,7 +4,7 @@ import "../styles/_featured2.scss";
 
 const Featured= () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8800/api/properties/countByCity?cities=Auckland,Wellington,Christchurch"
+    "http://localhost:9000/api/properties/countByCity?cities=Auckland,Wellington,Christchurch"
   );
 
   console.log(data);
