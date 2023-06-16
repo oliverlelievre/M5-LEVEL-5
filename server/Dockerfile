@@ -1,14 +1,14 @@
 FROM node:18-alpine
 
-RUN mkdir -p src/app
+WORKDIR /app
 
-WORKDIR /src/app
-
-COPY package.json yarn.lock /src/app/
+COPY package.json yarn.lock ./
 
 RUN yarn install
 
-COPY . /src/app
+COPY . .
+
+RUN yarn run build
 
 EXPOSE 9000
 

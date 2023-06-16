@@ -1,4 +1,4 @@
-FROM node:18-alpine as builder
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -6,9 +6,7 @@ COPY package.json yarn.lock ./
 
 RUN yarn install
 
-COPY . /app
-
-RUN yarn run build
+COPY . .
 
 EXPOSE 3000
 
