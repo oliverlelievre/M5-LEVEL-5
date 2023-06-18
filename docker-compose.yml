@@ -1,4 +1,4 @@
-version: "3.9"
+version: "1"
 services:
   api:
     container_name: property_management_service
@@ -6,23 +6,18 @@ services:
     restart: always
     build: ./server
     ports:
-      - 9000:9000
-    environment:
-      MONGO: mongodb://mongo:27017/test?
-      PORT: 9000
-      JWT_SECRET: secret
+      - "9000:9000"
     depends_on:
       - mongo
     networks:
       - mynetwork
-
   mongo:
     container_name: mongo
-    image: mongo:latest
+    image: mongo
     volumes:
-      - mongo:/data/db
+      - ./data:/data/db
     ports:
-      - 27017:27017
+      - "27017:27017"
 
     networks:
       - mynetwork
@@ -32,9 +27,7 @@ services:
     restart: always
     build: ./client
     ports:
-      - 3000:3000
-    stdin_open: true
-    tty: true
+      - "3000:3000"
     depends_on:
       - api
       - mongo
@@ -43,6 +36,3 @@ services:
 
 networks:
   mynetwork:
-
-volumes:
-  mongo:
